@@ -81,3 +81,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+/* ---------- TRACKS CAROUSEL LOGIC ---------- */
+
+const wrapper = document.querySelector('.tracks-track-wrapper');
+const cards = document.querySelectorAll('.track-card');
+const prev = document.querySelector('.carousel-btn.left');
+const next = document.querySelector('.carousel-btn.right');
+
+let index = 0;
+let autoRotate;
+
+function updateCarousel() {
+    wrapper.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function startAutoRotate() {
+    autoRotate = setInterval(() => {
+        index = (index + 1) % cards.length;
+        updateCarousel();
+    }, 5000);
+}
+
+function resetAutoRotate() {
+    clearInterval(autoRotate);
+    startAutoRotate();
+}
+
+/* Buttons */
+next.addEventListener('click', () => {
+    index = (index + 1) % cards.length;
+    updateCarousel();
+    resetAutoRotate();
+});
+
+prev.addEventListener('click', () => {
+    index = (index - 1 + cards.length) % cards.length;
+    updateCarousel();
+    resetAutoRotate();
+});
+
+/* Flip on click */
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+});
+
+/* Start auto rotation */
+startAutoRotate();
