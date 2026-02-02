@@ -633,99 +633,101 @@ button:hover {
 
 /* ===== TRACKS CAROUSEL ===== */
 
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 1100px;
-  margin: 60px auto;
-  overflow: hidden;
+/* ---------- TRACKS SECTION ---------- */
+.tracks-section {
+  padding: 100px 20px;
+  text-align: center;
 }
 
-.carousel-track {
+.center-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* ---------- FOCUS CAROUSEL ---------- */
+.tracks-focus {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  align-items: center;
+  gap: 80px;
+  perspective: 1200px;
 }
 
 .track-card {
-  width: 280px;
-  perspective: 1200px;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  opacity: 0.45;
-  transform: scale(0.85);
-}
-
-.track-card.active {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-.track-card.left,
-.track-card.right {
-  filter: blur(1px);
-}
-
-/* Flip card */
-.track-inner {
-  position: relative;
-  height: 360px;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease;
-  cursor: pointer;
-}
-
-.track-card.flipped .track-inner {
-  transform: rotateY(180deg);
-}
-
-.track-front,
-.track-back {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  border-radius: 18px;
-  background: rgba(10, 6, 20, 0.35);
-  border: 1px solid rgba(0, 240, 255, 0.12);
+  width: 220px;
+  height: 260px;
+  background: rgba(10,6,20,0.45);
+  border-radius: 20px;
+  border: 1px solid rgba(0,240,255,0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 28px;
-  text-align: center;
+  cursor: pointer;
+
+  transform: scale(0.85) translateZ(-120px);
+  opacity: 0.35;
+  filter: blur(1px);
+  transition: all 0.6s ease;
 }
 
-.track-front img {
-  width: 130px;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 0 20px rgba(0,240,255,0.5));
+.track-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 14px;
 }
 
-.track-front h3 {
+.track-card h3 {
   font-family: 'Orbitron', sans-serif;
   color: var(--neon-green);
+  letter-spacing: 1px;
 }
 
-.track-back {
-  transform: rotateY(180deg);
-  line-height: 1.6;
+/* ACTIVE (CENTER) */
+.track-card.active {
+  transform: scale(1.15) translateZ(0);
+  opacity: 1;
+  filter: blur(0);
+  box-shadow:
+    0 20px 60px rgba(0,240,255,0.25),
+    0 0 40px rgba(57,255,20,0.25);
 }
 
-/* Buttons */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
-  border: 1px solid rgba(0,240,255,0.4);
-  color: var(--neon-cyan);
-  font-size: 30px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
+/* ---------- DETAILS ---------- */
+.track-details {
+  margin-top: 70px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 28px 32px;
+  background: rgba(10,6,20,0.45);
+  border-radius: 18px;
+  border: 1px solid rgba(0,240,255,0.12);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.carousel-btn.left { left: 0; }
+.track-details h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--neon-green);
+  margin-bottom: 10px;
+}
+
+.track-details p {
+  line-height: 1.7;
+  color: rgba(230,255,245,0.95);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .tracks-focus {
+    gap: 30px;
+  }
+
+  .track-card {
+    width: 180px;
+    height: 220px;
+  }
+}
+}
 .carousel-btn.right { right: 0; }
