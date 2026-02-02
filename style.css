@@ -731,3 +731,30 @@ button:hover {
 }
 }
 .carousel-btn.right { right: 0; }
+.about-text {
+  max-width: 700px;
+  margin: 20px auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #eaeaea;
+  text-align: center;
+}
+
+.shpe-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 28px;
+  background: #00ff88; /* neon green vibe */
+  color: #000;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.shpe-button:hover {
+  background: #00cc6f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
+}
+
