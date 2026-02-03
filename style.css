@@ -54,23 +54,21 @@ body {
     transform: scale(1.2);
     color: var(--neon-green);
 }
-
 .social-icon {
-    width: 28px;
-    height: 28px;
+    width: 42px;
+    height: 42px;
     display: inline-block;
     object-fit: contain;
     filter: drop-shadow(0 6px 14px rgba(57,255,20,0.08));
     transition: transform 0.18s ease, filter 0.18s ease, opacity 0.18s ease;
 }
 .socials a:hover .social-icon {
-    transform: scale(1.18);
-    filter: drop-shadow(0 0 10px rgba(57,255,20,0.72));
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 14px rgba(57,255,20,0.85));
     opacity: 0.98;
 }
-
 @media (max-width: 420px) {
-    .social-icon { width: 24px; height: 24px; }
+    .social-icon { width: 32px; height: 32px; }
 }
 
 /* NAV PILL */
@@ -117,10 +115,8 @@ body {
     overflow: visible;
 }
 .mlh img {
-    /* pin badge near the very top of the viewport */
-    width: auto;
-    max-width: 160px;
-    max-height: 120px;
+    max-width: 210px;
+    max-height: 158px;
     height: auto;
     background: transparent;
     border-radius: 0;
@@ -129,18 +125,17 @@ body {
     box-shadow: none;
     filter: saturate(1.05) brightness(1.04) drop-shadow(0 8px 18px rgba(57,255,20,0.10));
 }
-
 @media (max-width: 1440px) {
-    .mlh img { max-width: 140px; max-height: 104px; }
+    .mlh img { max-width: 180px; max-height: 135px; }
 }
 @media (max-width: 1024px) {
-    .mlh img { max-width: 120px; max-height: 92px; }
+    .mlh img { max-width: 150px; max-height: 112px; }
 }
 @media (max-width: 768px) {
-    .mlh img { max-width: 96px; max-height: 72px; }
+    .mlh img { max-width: 120px; max-height: 90px; }
 }
 @media (max-width: 420px) {
-    .mlh img { max-width: 76px; max-height: 62px; }
+    .mlh img { max-width: 100px; max-height: 75px; }
 }
 
 /* ---------- HERO ---------- */
